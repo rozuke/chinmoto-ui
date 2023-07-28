@@ -1,4 +1,21 @@
-export const types = ["Job", "Tour", "Woman"];
+export const model = [
+  "DM 125",
+  "EG 125",
+  "TR 150s",
+  "TZ 150",
+  "HJ 125-8F",
+  "DR 160s",
+  "DF 150",
+  "KA 150",
+  "COOL",
+  "NK 150",
+  "Lucky Sport",
+  "Lucky Super",
+  "Lucky",
+  "UH 115",
+  "UD 110",
+  "KJ100",
+];
 
 export const yearsOfProduction = [
   { title: "Year", value: "" },
@@ -13,19 +30,11 @@ export const yearsOfProduction = [
   { title: "2023", value: "2023" },
 ];
 
-export const fuels = [
-  {
-    title: "Fuel",
-    value: "",
-  },
-  {
-    title: "Gas",
-    value: "Gas",
-  },
-  {
-    title: "Electricity",
-    value: "Electricity",
-  },
+export const types = [
+  { title: "Type", value: "" },
+  { title: "Job", value: "JOB" },
+  { title: "Woman", value: "WOMAN" },
+  { title: "Tour", value: "TOUR" },
 ];
 
 export const footerLinks = [

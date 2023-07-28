@@ -2,15 +2,15 @@
 import Image from "next/image";
 import { Combobox, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
-import { types } from "@/constants";
+import { model } from "@/constants";
 
 const SearchType = ({ type, setType }) => {
   const [query, setQuery] = useState("");
 
   const filterType =
     query === ""
-      ? types
-      : types.filter((item) =>
+      ? model
+      : model.filter((item) =>
           item
             .toLowerCase()
             .replace(/\\s+/g, "")
@@ -18,7 +18,7 @@ const SearchType = ({ type, setType }) => {
         );
   return (
     <div className="search-type">
-      <Combobox>
+      <Combobox value={type} onChange={setType}>
         <div className="relative w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image
@@ -31,7 +31,7 @@ const SearchType = ({ type, setType }) => {
           </Combobox.Button>
           <Combobox.Input
             className="search-type__input"
-            placeholder="Job"
+            placeholder="Model"
             displayValue={type}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -53,7 +53,24 @@ const SearchType = ({ type, setType }) => {
                   }
                   value={item}
                 >
-                  {item}
+                  {({ selected, active }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-medium" : "font-normal"
+                        }`}
+                      >
+                        {item}
+                      </span>
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                            active ? "text-white" : "text-teal-600"
+                          }`}
+                        ></span>
+                      ) : null}
+                    </>
+                  )}
                 </Combobox.Option>
               ))}
             </Combobox.Options>
