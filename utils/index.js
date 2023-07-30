@@ -1,6 +1,6 @@
 export async function fetchMotorcycles() {
   const url =
-    "http://localhost:8080/chinmoto/api/v1/motorcycle/all-motorcycles";
+    "https://chinmoto-api-production.up.railway.app/chinmoto/api/v1/motorcycle/all-motorcycles";
 
   const response = await fetch(url, {
     method: "GET",

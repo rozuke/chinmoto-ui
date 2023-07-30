@@ -32,7 +32,7 @@ const MotoDetailContent = ({ value }) => {
         <p className="text-black-100 font-semibold">{value.fuelCapacity}</p>
       </div>
       <div className="flex justify-between gap-5 w-full text-right">
-        <h4 className="text-grey">Main Ground</h4>
+        <h4 className="text-grey">Available Color</h4>
         {value.availableColor.map((color) => (
           <div
             className="w-4 h-4 rounded-full px-1 border border-black-100 border-solid"

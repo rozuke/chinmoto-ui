@@ -1,10 +1,10 @@
-import { CustomFilter, Hero, SearchBar } from "@/components";
+import { CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import CardMoto from "@/components/CardMoto";
 import { fetchMotorcycles } from "@/utils";
 import Image from "next/image";
 import { types } from "@/constants";
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
   const allMotorcycles = await fetchMotorcycles();
 
   const isDataEmpty =
@@ -18,14 +18,14 @@ export default async function Home() {
       <div className="mt-12 padding-x padding-y max-width" id="dicover">
         <div className="home__text-container">
           <h1 className="text-4x1 font-extrabold">Motorcycle Catalogue</h1>
-          <p>Explore the motorcycles you might like</p>
+          <p>Explore s you might like</p>
         </div>
 
         <div className="home__filters">
-          <SearchBar />
+          {/* <SearchBar />
           <div className="home__filter-container">
             <CustomFilter title="Type" options={types} />
-          </div>
+          </div> */}
         </div>
         {!isDataEmpty ? (
           <section>
@@ -34,6 +34,10 @@ export default async function Home() {
                 <CardMoto moto={moto} />
               ))}
             </div>
+            {/* <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allMotorcycles.length}
+            /> */}
           </section>
         ) : (
           <div className="home__error-container">

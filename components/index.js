@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";
 import SearchType from "./SearchType";
+import ShowMore from "./ShowMore";
 
 export {
   Hero,
@@ -14,4 +15,5 @@ export {
   SearchBar,
   CustomFilter,
   SearchType,
+  ShowMore,
 };
